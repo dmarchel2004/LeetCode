@@ -4,14 +4,18 @@ def zero(l, j):
     jef = l.index(j)
     good = 0
     print "hi"
+    print len(l)
     for m in range(len(l)-jef):
         print"hj"
         if l[jef+right] == max(l):
+            print "hb"
             return False
         elif l[jef+right] != '0':
+            print "hg"
             good = 1
         else:
             right += 1
+            print "hc"
     for k in range(l.index(j)):
         if l[jef-left] == min(l):
             return False
@@ -28,17 +32,22 @@ def main():
     x = raw_input("jef")
     final =''
     x = str(x)
+    zerolist = []
     if x == '0' or int(x) > 2147483647:
         return int(x)
-    for i in x:
-        if i == '-':
-            final += '-'
-        elif i == '0':
-            if zero(x, i) == False:
-                x.replace(i,'')
-    x = x.replace("-","")
-    x = x[::-1]
-    final += x
+    for s in x:
+        zerolist.append(s)
+        for i in zerolist:
+            if i == '-':
+                final += '-'
+                zerolist.remove(i)
+            elif i == '0':
+                if zero(zerolist, i) == False:
+                    zerolist.remove(i)
+            print zerolist
+    zerolist = zerolist[::-1]
+    for c in zerolist:
+        print final
+        final += c
     print final
-    return int(final)
 main()
