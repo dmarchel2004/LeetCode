@@ -2,6 +2,8 @@ def zero(l, j):
     right = 0
     left = 0
     jef = l.index(j)
+    print j
+    print "hi"
     for j in range(len(l)-jef):
         if l.index(l[jef+right]) == max(l):
             return False
