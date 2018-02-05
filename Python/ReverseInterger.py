@@ -1,3 +1,21 @@
+def zero(l, j):
+    jef = l.index(j)
+    for j in range(len(l)-jef):
+        if l.index(l[jef+right]) == max(l):
+            l.pop(j)
+        elif l[jef+right] != '0':
+            break
+        else:
+            right += 1
+    for k in range(l.index(j)):
+        if l.index(l[jef-left]) == min(l):
+            l.pop(j)
+        elif l[jef-left] != '0':
+            break
+        else:
+            left += 1
+
+
 def main():
     x = raw_input("jef")
     final =''
@@ -10,21 +28,7 @@ def main():
         if i == '-':
             final += '-'
         elif i == '0':
-            jef = x.index(i)
-            for j in range(len(x)-jef):
-                if x.index(x[jef+right]) == max(x):
-                    x.remove('0')
-                elif x[jef+right] != '0':
-                    break
-                else:
-                    right += 1
-            for k in range(x.index(i)):
-                if x.index(x[jef-left]) == min(x):
-                    x.remove('0')
-                elif x[jef-left] != '0':
-                    break
-                else:
-                    left += 1
+            zero(x, i)
     x = x.replace("-","")
     x = x[::-1]
     final += x
