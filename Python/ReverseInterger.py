@@ -1,52 +1,30 @@
-def zero(l, j):
-    right = 0
-    left = 0
-    jef = l.index(j)
-    print 'jef', jef
-    while True:
-        print right
-        print left
-        # print l[jef+right]
-        # print l[jef-left]
-        if l[jef+right] != '0' and l[jef-left] != '0':
-            print 'o'
-            return True
-        elif l[jef+right] == '0' and jef + right + 1!= len(l):
-            right +=1
-            print 'f'
-        elif l[jef - left] == '0' and jef - left != 0:
-            left += 1
-            print 'of'
-        elif (l[jef+right] == '0' and jef + right + 1 == len(l)) or (l[jef - left] == '0' and jef - left == 0):
-            print 'oof'
-            return False
+def zero(l):
+    isZero = True
+    while isZero:
+        if l[0] == '0':
+            l.pop(0)
+        if l[len(l)-1] == '0':
+            l.pop(len(l)-1)
+        else:
+            isZero = False
+    return l
+
 
 def reverse():
-    x = raw_input("ppf")
-    final =''
-    zerolist = []
-    removals = []
-    if x == '0' or int(x) > 2147483647:
-        return 0
-    for s in x:
-        zerolist.append(s)
-    for i in zerolist:
-        print 'i', i
-        print i, zerolist.index(i)
+    x = str(x)
+    chars = []
+    final = ''
+    if x == '0'
+    for i in x:
+        chars.append(i)
         if i == '-':
-            final += '-'
-            zerolist.remove(i)
-        elif i == '0':
-            if zero(zerolist, i) == False:
-                removals.append(i)
-            else:
-                removals.append('')
-    place = 0
-    for i in zerolist:
-        if i == removals[0]:
-            zerolist.remove(i)
-    zerolist = zerolist[::-1]
-    for c in zerolist:
-        final += c
-    print final
+            final += i
+            chars.remove(i)
+    chars = zero(chars)
+    chars = chars[::-1]
+    for a in chars:
+        final += a
+    if abs(int(final))>2147483647:
+        return 0:
+    return final
 reverse()
