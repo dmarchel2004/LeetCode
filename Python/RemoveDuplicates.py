@@ -10,4 +10,4 @@ class Solution(object):
         if len(numTot) % 2.0 == 0:
             return (numTot[len(numTot)/2]+numTot[(len(numTot)/2)-1])/2.0
         else:
-            return numTot[len(numTot)/2]
+            return numTot[len(numTot)/2]q
